@@ -1,0 +1,85 @@
+/* Banner Container */
+.ad-banner-container {
+    position: relative;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+   
+  }
+  
+  /* Banner Slide */
+  .ad-banner-slide {
+    position: relative;
+    margin-bottom: 80px; /* ขยับรูปขึ้นมา 80px */
+  }
+  
+  /* Image */
+ /* Image */
+.ad-image {
+    width: 80%; /* กำหนดขนาดให้เป็น 80% */
+    height: 400px;
+    object-fit: cover; /* ครอบภาพให้เต็มพื้นที่โดยไม่ผิดสัดส่วน */
+    display: block;
+    margin: 0 auto; /* จัดให้อยู่ตรงกลาง */
+    border-radius: 20px; /* เพิ่มขอบมนให้กับรูปภาพ */
+  }
+  
+  
+  /* Pagination Dots */
+  .ad-pagination-dots {
+    position: absolute;
+    bottom: 10px; /* ขยับปุ่มลงมาที่ตำแหน่งใหม่ */
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+  }
+  
+  /* Dot Style */
+  .ad-dot {
+    width: 12px;
+    height: 17px;
+    border-radius: 50%;
+    border: 3px solid #f8941d;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  /* 📌 ดอทที่ถูกเลือก */
+.ad-dot.active {
+    background-color: #f8941d;
+    transform: scale(1.2);
+  }
+  /* Media Queries */
+  
+  /* For screen width max 768px */
+  @media (max-width: 768px) {
+    .ad-banner-container {
+      height: 300px;
+    }
+  
+    .ad-image {
+      height: 300px;
+      width: 90%;
+    }
+  
+    .ad-pagination-dots {
+      bottom: 15px; /* เพิ่มระยะห่างจากด้านล่างเมื่อหน้าจอเล็ก */
+    }
+  }
+  
+  /* For screen width max 480px */
+  @media (max-width: 480px) {
+    .ad-banner-container {
+      height: 250px;
+    }
+  
+    .ad-image {
+      height: 250px;
+    }
+  
+    .ad-pagination-dots {
+      bottom: 20px; /* เพิ่มระยะห่างจากด้านล่างมากขึ้น */
+    }
+  }
+  

@@ -1,0 +1,178 @@
+.filter-box {
+    width: 210px;
+    background-color: #f8f8f8;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    flex-shrink: 0;
+    margin-right: auto;
+    
+  }
+  .filter-section {
+    margin-bottom: 20px;
+    color: #003580;
+  }
+  .filter-label {
+    font-weight: bold;
+    margin-bottom: 10px;
+    display: block;
+    color: #003580;
+  }
+  .filter-budget-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+  }
+  
+  .filter-budget-box {
+    border: 1px solid #003580; 
+    color: #003580;
+    padding: 5px 10px;
+    border-radius: 5px;
+    width: 60px; 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center
+  }
+  .filter-budget-input {
+    border: none;
+    width: 50px;
+    text-align: right;
+    font-size: 14px;
+    color: #003580;
+    background: transparent;
+    appearance: none;
+    outline: none;
+  }
+
+.filter-budget-separator {
+    margin: 0 10px;
+    font-weight: bold;
+    
+  }
+    .filter-input-box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 1px solid #003580;
+    border-radius: 5px;
+    padding: 8px 12px;
+    margin-bottom: 15px;
+    
+  }
+  .filter-date-input {
+    width: 100%;
+    padding: 8px;
+    border: none;
+    outline: none;
+    font-size: 14px;
+    color: #003580;
+    border-radius: 5px;
+    background: transparent;
+    flex: 1;
+  }
+  .filter-icon {
+    color: #003580;
+    margin-left: 10px;
+  }
+  /* ฟิลเตอร์จำนวนวัน (checkbox แบบสี่เหลี่ยม) */
+.filter-section input[type="checkbox"].square {
+    width: 16px;
+    height: 16px;
+    border-radius: 3px; /* ทำให้เป็นสี่เหลี่ยม */
+    appearance: none;
+    border: 1px solid #003580;
+    cursor: pointer;
+    outline: none;
+    background-color: transparent;
+    position: relative;
+  }
+  
+  .filter-section input[type="checkbox"].square:checked::before {
+    content: "✔";
+    width: 16px;
+    height: 16px;
+    background-color: #003580;
+    color: white;
+    border-radius: 3px; /* ทำให้เป็นสี่เหลี่ยม */
+    font-size: 12px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+ /* ฟิลเตอร์จำนวนวัน (checkbox แบบวงกลม) */
+  .filter-section input[type="checkbox"].circle {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    appearance: none;
+    border: 1px solid #003580;
+    cursor: pointer;
+    outline: none;
+    background-color: transparent;
+    position: relative;
+  }
+  
+  .filter-section input[type="checkbox"].circle:checked::before {
+    content: "";
+    width: 8px;
+    height: 8px;
+    background-color: #003580;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+ 
+  /* เส้นหลักของแถบเลื่อน */
+.filter-slider-track {
+    position: relative;
+    width: 100%;
+    height: 6px;
+    background: #ddd;
+    border-radius: 5px;
+    margin: 20px 0;
+  }
+  
+  /* เส้นสีส้มระหว่างค่าต่ำสุดและค่าสูงสุด */
+  .filter-slider-range {
+    position: absolute;
+    height: 6px;
+    background: #FF8C00;
+    border-radius: 5px;
+  }
+  
+  /* จุดเริ่มต้นและจุดสิ้นสุดของแถบเลื่อน */
+  .filter-slider-thumb {
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    background: #FF8C00;
+    border-radius: 50%;
+    top: -4px;
+    transform: translateX(-50%);
+  }
+  /* สไตล์สำหรับ hr */
+.filter-hr-line {
+    border: 1px solid white;
+    margin: 20px 0;
+  }
+
+.filter-section .duration-label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+@media (max-width: 1100px) {
+  .filter-box {
+    width: 90%; /* ปรับขนาดให้เล็กลงเมื่อหน้าจอเล็ก */
+    margin: 0 auto; /* ให้อยู่ตรงกลางแนวนอน */
+  }
+}

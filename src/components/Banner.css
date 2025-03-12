@@ -1,0 +1,452 @@
+/* ตั้งค่าพื้นฐาน */
+.banner-container {
+    position: relative;
+    color: white;
+    font-family: Arial, sans-serif;
+    margin: 0 auto; /* จัดให้อยู่ตรงกลาง */
+    padding: 0 20px; /* ป้องกันขอบติดข้าง */
+    align-items: center;
+    display: flex; /* เพิ่ม flex เพื่อให้อยู่กลาง */
+    justify-content: center; /* เพิ่ม flex เพื่อให้อยู่กลาง */
+    margin-bottom: -40px;
+  }
+  /* เมื่อหน้าจอเล็กลง */
+@media (max-width: 768px) {
+    .banner-container {
+      margin-bottom: -80px; /* เพิ่มค่าตรงนี้เพื่อให้มันขยับขึ้น */
+      padding: 0 10px; /* ป้องกันขอบติดข้าง */
+    }
+  }
+  /* พื้นหลัง */
+  .banner-background-gray {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 82%;
+    background-color: #e5eef4;
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 50% 100%, 0 85%);
+    z-index: -2;
+  }
+  
+  .banner-background-blue {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 84%;
+    background-color: #f4f7fa;
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 50% 100%, 0 85%);
+    z-index: -3;
+  }
+  
+  .banner-background-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 80%;
+    background: url('https://roijang.com/wp-content/uploads/2023/10/shutterstock_559595101.jpg') no-repeat center center/cover;
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 50% 100%, 0 85%);
+    z-index: -1;
+  }
+  
+  .banner-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 80%;
+    background: rgba(0, 0, 0, 0.4);
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 50% 100%, 0 85%);
+    z-index: 0;
+  }
+  
+  /* เนื้อหา */
+  .banner-content {
+    position: relative;
+    z-index: 1;
+    padding: 50px 20px;
+    max-width: 1500px;
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+  }
+  
+  /* ส่วนบน */
+  .banner-top-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+  }
+  @media (max-width: 768px) {
+    .banner-top-content {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+  
+    .banner-left-column,
+    .banner-right-column {
+      width: 100%;
+    }
+  
+    .banner-right-column {
+      display: flex;
+      justify-content: center;
+      margin-top: -20px; /* ให้มีช่องว่างด้านบน */
+    }
+  
+  }
+  @media (max-width: 1000px) {
+    .banner-top-content {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+  
+    .banner-left-column,
+    .banner-right-column {
+      width: 100%;
+    }
+  
+    .banner-right-column {
+      display: flex;
+      justify-content: center;
+      margin-top: 10px; /* ให้มีช่องว่างด้านบน */
+    }
+  
+  }
+  .banner-left-column {
+    flex: 1;
+    text-align: left;
+  }
+  
+  .banner-right-column {
+    flex: 1;
+    text-align: right;
+  }
+  /* ปรับให้คอลัมน์ซ้ายและขวาเรียงกันในแนวตั้งเมื่อหน้าจอเล็ก */
+@media (max-width: 768px) {
+    .banner-top-content {
+      flex-direction: column; /* เรียงในแนวตั้ง */
+      justify-content: center;
+      align-items: center;
+    }
+  
+    .banner-left-column, .banner-right-column {
+      width: 100%; /* กำหนดให้ทั้งสองคอลัมน์มีความกว้างเต็มที่ */
+      text-align: center; /* จัดตำแหน่งเนื้อหาภายในให้ตรงกลาง */
+    }
+  }
+  .banner-title {
+    font-size: 50px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #ffa500;
+  }
+    /* เมื่อหน้าจอเล็กลง */
+@media (max-width: 768px) {
+    .banner-title {
+        font-size: 40px;
+    }
+     
+    }
+   
+  .banner-title span {
+    font-size: 100px;
+    font-weight: bold;
+    color: #003580;
+    text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.7);
+  }
+  /* เมื่อหน้าจอเล็กลง */
+  @media (max-width: 768px) {
+    .banner-title span {
+        font-size: 60px;
+    }    
+    }
+  .banner-description {
+    font-size: 20px;
+    max-width: 100%;
+    margin: 20px auto;
+    line-height: 1.6;
+  }
+    /* เมื่อหน้าจอเล็กลง */
+@media (max-width: 768px) {
+    .banner-description {
+        font-size: 16px;
+        text-align: left;
+    }
+  }
+  /* ส่วนค้นหา */
+  .banner-search-container {
+    position: relative;
+    margin-top: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    transform: translateY(-80px);
+  }
+  
+@media (max-width: 768px) {
+    .banner-search-container {
+      margin-top: 130px;  /* ลดระยะห่างด้านบน */
+      
+    }
+  }
+  .banner-icon-box {
+    position: absolute;
+    top: -30px;
+    background: white;
+    padding: 10px 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    
+  }
+  .banner-icon-container{
+    display: grid;
+    grid-template-columns: repeat(6, 1fr); /* แสดง 6 คอลัมน์ */
+    gap: 10px; /* ระยะห่างระหว่างไอคอน */
+  }
+
+/* สไตล์สำหรับหน้าจอเล็กที่จะแสดง 3 อันใน 1 แถว */
+@media (max-width: 768px) {
+    .banner-icon-container {
+      grid-template-columns: repeat(3, 1fr); /* แสดง 3 คอลัมน์ */
+      
+    }
+   
+  }
+  
+/* สไตล์สำหรับหน้าจอเล็กที่จะแสดง 3 อันใน 1 แถว */
+@media (max-width: 350px) {
+  .banner-icon-container {
+    grid-template-columns: repeat(3, 1fr); /* แสดง 3 คอลัมน์ */
+    gap: 25px; /* ระยะห่างระหว่างไอคอน */
+    
+  }
+  .banner-icon-box {
+    top: -35px;
+    padding: 10px 40px;
+  }
+  .banner-search-inputs {
+    padding: 0 80px
+   
+  }
+  
+}
+  .banner-icon-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  color: #003580;
+  }
+  .banner-icon-label{
+    font-size: 14px;
+    font-weight: bold;
+    color: #333;
+    white-space: nowrap; /* ป้องกันการแสดงหลายบรรทัด */
+    overflow: hidden; /* ซ่อนข้อความที่เกิน */
+    text-overflow: ellipsis; /* ใช้ "..." เมื่อข้อความยาวเกิน */
+  }
+  
+  /* ช่องค้นหา */
+  .banner-search-box {
+    margin-top: 30px;
+    padding: 40px;
+    background-color: white;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: -5px;
+    color: #333;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 950px;
+    height: 190px; /* ความสูงตามเนื้อหา */
+  }
+  /* เมื่อหน้าจอเล็กลง */
+@media (max-width: 768px) {
+    .banner-search-box {
+      margin-top: 110px; /* ปรับให้มากขึ้นเพื่อเลื่อนลง */
+    }
+    .banner-search-box {
+      margin-top: 130px;
+      padding: 10px;
+      background-color: white;
+      border-radius: 10px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: -10px;
+     
+      height: 210px; /* ความสูงตามเนื้อหา */
+    }
+    
+  }
+  .banner-hr {
+    width: 50%;
+    margin-top: 1px;
+    border: 1px solid #003580;
+  }
+  
+  .banner-search-inputs {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    margin-top: 10px;
+   
+  }
+  
+  .banner-input-group {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 10px; /* ให้มีช่องว่างระหว่างไอคอนและอินพุต */
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 8px;
+    flex: 1;
+    margin: 10px 0;
+    
+  }
+  
+  .banner-input-group svg {
+    color: #003580;
+  }
+  
+
+.banner-date-input-group {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 8px;
+    flex: 0.468; /* ให้ช่องวันเดินทางไป และ วันเดินทางกลับมีขนาดครึ่งหนึ่ง */
+    margin: 10px 0; /* ลดช่องว่างระหว่างช่องกรอกข้อมูล */
+    color: #003580;
+    
+  }
+  
+@media (max-width: 768px) {
+    .banner-date-input-group:nth-child(1) {
+        flex: 1; /* ขยายช่อง "วันเดินทางไป" ให้เต็มพื้นที่ */
+        
+        
+    }
+    .banner-date-input-group:nth-child(2) {
+        display: none; /* ซ่อนช่อง "วันเดินทางกลับ" เมื่อหน้าจอเล็ก */
+    }
+   
+  
+  
+}
+  
+  .banner-input {
+    border: none;
+  outline: none;
+  padding: 8px;
+  width: 100%;
+  background: none;
+  color: #333;
+  font-size: 14px;
+  }
+ 
+  .banner-search-button {
+    padding: 10px 100px;
+    background-color: #003580;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin: 10px;
+  }
+  
+  .banner-search-button:hover {
+    background: #002a66;
+  }
+
+  .banner-date-picker {
+    width: 80%;
+    padding: 8px;
+    border: none;
+    outline: none;
+    font-size: 14px;
+    color: #333;
+    border-radius: 5px;
+  }
+  .banner-dropdown {
+    width: 100%;
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid transparent; /* ปรับให้เหมือน .banner-input */
+    color: #333;
+    font-size: 14px;
+    background-color: white;
+    box-sizing: border-box; /* ป้องกัน padding ทำให้ขนาดเปลี่ยน */
+}
+
+  
+@media (max-width: 350px) {
+  .banner-title {
+    font-size: 30px;   /* ขยายช่อง "วันเดินทางไป" ให้เต็มพื้นที่ */
+  } 
+   
+  .banner-title span {
+    font-size: 50px;
+   
+  }
+  .banner-description {
+    font-size: 14px;
+    text-align: left;
+}
+
+
+  }
+
+  @media (min-width: 1000px) and (max-width: 1300px) {
+    .banner-title {
+      font-size: 50px;   /* ขยายช่อง "วันเดินทางไป" ให้เต็มพื้นที่ */
+    } 
+     
+    .banner-title span {
+      font-size: 80px;
+     
+    }
+    .banner-description {
+      font-size: 16px;
+      text-align: left;
+  }
+  
+    }
+    .banner-icon-label-short {
+      font-size: 14px;
+      font-weight: bold;
+      color: #333;
+    }
+    @media (max-width: 350px) {
+      .banner-icon-label {
+        display: none; /* ซ่อนข้อความเดิม */
+      }
+      .banner-icon-label-short {
+        display: inline-block; /* แสดงข้อความสั้นแทน */
+      }
+    }
+    
+    @media (min-width: 351px) {
+      .banner-icon-label-short {
+        display: none; /* ซ่อนข้อความสั้นเมื่อจอใหญ่ */
+      }
+    }
+    

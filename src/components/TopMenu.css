@@ -1,0 +1,929 @@
+/* โครงสร้างพื้นฐานของเมนูด้านบน */
+.top-menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px ;
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-family: Arial, sans-serif;
+    
+  }
+
+  /* Logo */
+  .top-logo {
+    height: 40px;
+  }
+  
+  /* การจัดการเมนูไอเท็ม ค่าเริ่มต้นคือหน้าแรกเสมอ */
+  .top-menu-item {
+    margin: 0 10px;
+    font-size: 14px;
+    color: #003580; /* สีน้ำเงิน */
+    cursor: pointer;
+    text-decoration: none;
+    font-weight: bold;
+  }
+
+  /* เมื่อเคลื่อนผ่าน และเมื่อ Active */
+  .top-menu-item:hover,
+  .top-menu-item.active {
+    color: #ff7f00; /* สีส้มเมื่อ active */
+    text-decoration: underline;
+    text-decoration-thickness: 1.5px; /* กำหนดความหนาของเส้นใต้ */
+  }
+  
+  /* การจัดวางกล่องด้านขวา */
+  .top-left-section,
+  .top-right-section {
+      display: flex;
+      align-items: center;
+  }
+
+  /* กล่องค้นหา */
+  .top-search-box {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    padding: 5px 10px;
+    margin-right: 15px;
+  }
+  
+  .top-search-input {
+    border: none;
+    outline: none;
+    font-size: 14px;
+    padding: 5px;
+  }
+  /* ปุ่มค้นหา */
+  .top-search-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color:#003580;
+    
+  }
+  
+  /* ปรับขนาดกล่องงบประมาณ */
+.top-budget-box {
+  border: 1px solid #ddd;
+  border-radius: 20px;
+  padding: 5px 15px; /* ลดการขยายพื้นที่ในช่อง */
+  margin-right: 15px;
+  display: flex;  /* ใช้ flex เพื่อจัดการเนื้อหา */
+  align-items: center;  /* จัดเนื้อหาตั้งอยู่กลาง */
+}
+
+/* ปรับขนาดช่องกรอกข้อมูล */
+.top-budget-input {
+  border: none;
+  outline: none;
+  font-size: 14px;
+  width: 150px; /* ลดความกว้างให้พอดีกับข้อความ */
+  padding: 5px 10px; /* เพิ่ม padding ให้ช่องกรอกข้อมูล */
+}
+
+  /* กล่องภาษา */
+  .top-language-box {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    margin-right: 15px;
+  }
+  /* ขนาดธง */
+  .top-language-box img {
+    height: 24px;
+    width: 30px;
+    border-radius: 10%;
+  }
+  
+  /* กล่องสกุลเงิน */
+  .top-currency-box {
+    font-size: 14px;
+    color: #003580;
+    cursor: pointer;
+    margin-right: 15px;
+  }
+  
+  /* ไอคอนตะกร้าสินค้า */
+  .top-cart-icon {
+    color: #003580;
+    font-size: 20px;
+    cursor: pointer;
+  }
+  
+  /* ปุ่มเข้าสู่ระบบและสมัครสมาชิก */
+  .top-sign-in-button,
+  .top-create-account-button {
+    border-radius: 20px;
+    font-size: 14px;
+    padding: 5px 15px;
+    margin-left: 10px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px; /* ระยะห่างระหว่างไอคอนและข้อความ */
+    padding: 7px 11px;
+   
+    transition: all 0.3s ease,
+  }
+   /* ปุ่มเข้าสู่ระบบ */
+  .top-sign-in-button {
+    color: #003580;
+    border: 1px solid #003580;
+    background-color: #ffffff;
+  }
+   /* ปุ่มสมัครสมาชิก */
+  .top-create-account-button {
+    color: #ffffff;
+    border: 1px solid #003580;
+    background-color: #003580;
+  }
+  /* ปรับแต่งสไตล์ปุ่มเมื่อ hover */
+ .top-sign-in-button:hover,
+  .top-create-account-button:hover {
+    background-color: #003580;
+    color: white;
+  }
+
+  /* โมดัล */
+/* 🖼️ Overlay ของโมดัล */
+
+.top-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(255, 255, 255, 0.7);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 📌 โมดัล */
+.top-modal {
+  position: absolute;
+  background: transparent;
+  border: none;
+  padding: 0;
+  width: 100%;
+  max-width: 1000px;
+  height: auto;
+  z-index: 10000;
+}
+
+/* 💎 คอนเทนต์ของโมดัล */
+.top-modal-content {
+  background: rgba(255, 255, 255, 0.9);
+  padding: 20px;
+width: 100%;
+  margin: auto;
+  border-radius: 8px;
+  border: 2px solid #003580;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  position: relative;
+  z-index: 999999;
+}
+/* เมื่อหน้าจอเล็กลง (ขนาดน้อยกว่า 600px) */
+@media screen and (max-width: 768px) {
+  .top-promo-text h3 {
+    font-size: 16px; /* ลดขนาดของ h3 */
+  }
+
+
+}
+/* เมื่อหน้าจอมีขนาดเล็ก */
+@media (max-width: 768px) {
+ 
+  .top-modal h2 {
+    font-size: 16px; /* ปรับขนาดตัวอักษร */
+  }
+  .top-modal li {
+    font-size: 14px; /* ปรับขนาดตัวอักษรในรายการ */
+  }
+}
+
+/* เพิ่มการจัดการการแสดงผลของเนื้อหาภายในโมดัล */
+@media (max-width: 480px) {
+  .top-modal-content {
+    padding: 10px; /* ลด padding ให้เหมาะสม */
+  }
+  .top-modal h2 {
+    font-size: 14px; /* ปรับขนาดตัวอักษรให้เหมาะสม */
+  }
+  .top-modal li {
+    font-size: 12px; /* ปรับขนาดตัวอักษรให้เหมาะสม */
+  }
+}
+
+
+  .top-modal h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  .top-modal ul {
+    list-style: none;
+    padding: 0;
+  }
+  .top-modal li {
+    padding: 8px 0;
+    cursor: pointer;
+  }
+  .top-modal li:hover {
+    background-color: #f0f0f0;
+  }
+  /* Styles for the modal overlay */
+.top-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(255, 255, 255, 0.7);
+  z-index: 9999; /* ให้อยู่เหนือสุด */
+}
+
+/* Styles for the modal content */
+.top-modal__content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #fff; /* เปลี่ยนพื้นหลังให้เป็นสีขาว */
+  border-radius: 8px; /* เพิ่มความโค้งให้กับมุม */
+  padding: 20px;
+  width: 100%;
+  max-width: 1000px;
+  height: auto;
+  z-index: 10000; /* ให้อยู่เหนือ Overlay */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* เพิ่มเงาให้กับโมดัล */
+  overflow: hidden; /* ซ่อนส่วนที่เกินขอบ */
+}
+
+
+ /* สไตล์ Avatar */
+.top-user-info {
+    display: flex;
+    align-items: center;
+    margin-left: 15px;
+  }
+  .top-user-avatar {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin-right: 8px;
+  }
+  
+  .top-sign-out-button {
+    border: none;
+    background-color: transparent;
+    color: #003580;
+    font-size: 14px;
+    cursor: pointer;
+  }
+  .top-sign-out-button:hover {
+    text-decoration: underline;
+  }
+  
+  .top-menu-items {
+    display: flex;
+    gap: 10px;
+  }
+  
+  /* เส้นขีดแนวตั้ง */
+.top-user-divider {
+  border-left: 1px solid #ccc;
+  height: 40px;
+  margin-right: 5px;
+  padding-left: 5px;
+}
+  
+/* รูปโปรไฟล์ */
+.top-user-avatar {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+/* กรอบแสดงแทนรูป */
+.top-user-placeholder {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ccc;
+  color: white;
+  font-size: 14px;
+  text-align: center;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+/* รายละเอียดผู้ใช้ */
+.top-user-details {
+  display: flex;
+  flex-direction: column;
+}
+
+/* สถานะผู้ใช้ */
+.top-user-status {
+  font-size: 12px;
+  color: green;
+}
+.top-budget-icon {
+  color:#0b3a6a;
+  size: 18px;
+}
+
+.top-content-wrapper {
+  display: flex;
+  flex-direction: row; /* จัดเรียงแบบซ้ายขวา */
+  justify-content: space-between; /* จัดระยะห่างระหว่างคอลัมน์ */
+  width: 100%;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+ 
+  box-sizing: border-box;
+}
+
+/* สำหรับกรณีที่หน้าจอเล็กลง (mobile) */
+@media (max-width: 768px) {
+  .top-modal {
+    width: 93%; /* ความกว้าง 90% สำหรับมือถือ */
+    max-height: 70vh; /* ความสูงไม่เกิน 80% */
+    overflow-y: auto; /* scroll ถ้าเนื้อหามากเกินไป */
+    border-radius: 8px;
+  }
+
+  .top-content-wrapper {
+    flex-direction: column; /* จัดเรียงแบบแนวตั้ง */
+   
+  }
+
+  .top-form-wrapper {
+    padding: 5px; /* เพิ่ม padding ให้ฟอร์ม */
+  }
+}
+/* Form Wrapper */
+.top-form-wrapper {
+  flex: 1;
+  padding: 30px;
+  max-width: 100%; /* จำกัดขนาดไม่ให้ใหญ่เกินไป */
+}
+
+/* Image Section */
+.top-image-section {
+  flex: 1;
+  padding: 20px;
+  max-width: 100%; /* จำกัดขนาดไม่ให้ใหญ่เกินไป */
+  text-align: center;
+  background-color: #f5f5f5;
+  position: relative;
+  box-sizing: border-box;
+}
+
+/* Title */
+.top-title {
+  font-size: 28px; /* กำหนดขนาดตัวอักษร */
+  color: #003580; /* กำหนดสี */
+  margin-bottom: 10px;
+  margin-top: 20px;
+  text-align: center; /* จัดข้อความให้อยู่กลาง */
+  font-weight: bold; /* เพิ่มความหนาของตัวอักษร */
+}
+
+/* Subtitle */
+.top-subtitle {
+  font-size: 14px;
+  color: #b0b0b0;
+  margin-bottom: 10px;
+  text-align: center; /* จัดข้อความให้อยู่กลาง */
+}
+
+/* Label */
+.top-label {
+  font-size: 13px;
+  color: #003580;
+  font-weight: bold;
+  margin-bottom: 5px; /* ให้ระยะห่างจาก input */
+  text-align: left; /* ปรับให้อยู่ทางซ้าย */
+}
+
+/* Input */
+.top-input {
+  width: 100%; /* ปรับให้กว้าง 100% ของ container */
+  max-width: 450px; /* กำหนดความกว้างสูงสุด */
+  padding: 10px;
+  margin-top: 5px;
+  margin-bottom: 15px;
+  border: 1.5px solid #003580;
+  border-radius: 5px;
+}
+
+/* สำหรับหน้าจอที่เล็กลง (มือถือ) */
+@media (max-width: 768px) {
+  .top-input {
+    width: 93%; /* ปรับให้กว้าง 90% ของ container สำหรับมือถือ */
+    margin: 10px auto; /* ใช้ margin auto เพื่อจัดกลางในแนวนอน */
+    display: flex;
+    justify-content: center; /* ทำให้เนื้อหากลางในแนวนอน */
+    align-items: center; /* ทำให้เนื้อหากลางในแนวตั้ง */
+  }
+
+  .top-search-box {
+    width: 90%; /* ปรับความกว้างให้เหมาะสม */
+    margin: 0 auto; /* จัดกลางในแนวนอน */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+/* Title */
+.top-title {
+  font-size: 25px; /* กำหนดขนาดตัวอักษร */
+  margin-top: 0;
+ 
+}
+
+/* Subtitle */
+.top-subtitle {
+  font-size: 12px;
+ 
+}
+.top-social-icons button span {
+  display: none; /* ซ่อนข้อความเมื่อหน้าจอเล็ก */
+}
+
+
+
+}
+
+
+/* Placeholder for Input */
+.top-input::placeholder {
+  color: #b0b0b0; /* สีเทาอ่อน */
+}
+
+/* Password Wrapper */
+.top-password-wrapper {
+  position: relative;
+}
+
+
+/* Button */
+.top-button {
+  width: 100%;
+  padding: 10px;
+  background-color: #003580;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 15px;
+  margin-bottom: 10px;
+}
+
+/* Options */
+.top-options {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+/* Link */
+.top-link {
+  font-size: 14px;
+  color: #003580;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+/* Social Text */
+.top-social-text {
+  text-align: center;
+  margin-top: 20px;
+  color: #003580;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  margin-top: 20px;
+   font-size: 16px;
+}
+/* 🔹 เส้นขีดซ้าย-ขวา */
+.top-social-text::before,
+.top-social-text::after {
+  content: "";
+  flex-grow: 1;
+  height: 1px;
+  background: #003580;
+  margin: 0 10px;
+  max-width: 160px;
+}
+
+/* Social Text */
+.top-social-login {
+  text-align: center;
+  margin-top: 20px;
+  color: #003580;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  margin-top: 90px;
+  font-size: 16px;
+}
+/* 🔹 เส้นขีดซ้าย-ขวา */
+.top-social-login::before,
+.top-social-login::after {
+  content: "";
+  flex-grow: 1;
+  height: 1px;
+  background: #003580;
+  margin: 0 10px;
+  max-width: 160px;
+}
+.top-social-icons {
+  display: flex;
+  gap: 10px; /* ช่องว่างระหว่างปุ่ม */
+}
+
+
+.top-social-icons button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px; /* ช่องว่างระหว่างไอคอนและข้อความ */
+  padding: 10px 15px;
+  background-color: transparent; /* ไม่มีพื้นหลัง */
+  color: #003580; /* สีข้อความและไอคอน */
+  border: 1px solid #003580; /* ขอบสีของน้ำเงิน */
+  border-radius: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  height: 40px; /* ความสูงของปุ่ม */
+}
+
+/* ไอคอนในปุ่ม */
+.top-social-icons img {
+  width: 25px;
+  height: 25px;
+  border-radius: 15px;
+}
+/* ปุ่ม Google */
+.top-social-icons button:nth-child(1) {
+  width: 110px; /* กำหนดความกว้างขั้นต่ำของปุ่ม */
+}
+/* ปุ่ม Facebook */
+.top-social-icons button:nth-child(2) {
+  width: 135px; /* กำหนดความกว้างขั้นต่ำของปุ่ม */
+}
+/* ปุ่ม Line */
+.top-social-icons button:nth-child(3) {
+  width: 95px; /* กำหนดความกว้างของปุ่ม */
+}
+/* ปุ่ม Apple */
+.top-social-icons button:nth-child(4) {
+  width: 101px; /* กำหนดความกว้างของปุ่ม */
+}
+
+
+/* Note */
+.top-note {
+  text-align: center;
+  font-size: 12px;
+  color: #003580;
+  margin-bottom: -10px;
+  margin-top: 15px;
+  margin-top: 30px;
+}
+
+.top-note span {
+  font-weight: bold; /* ทำให้ตัวอักษรใน <span> หนา */
+}
+@media screen and (max-width: 768px) {
+  .top-note {
+    text-align: left; /* ปรับข้อความให้ชิดซ้าย */
+    margin-top: 15px;
+  }
+
+  /* Social Text */
+.top-social-login {
+  margin-top: 40px;
+  font-size: 15px;
+}
+
+/* Social Text */
+.top-social-text {
+  font-size: 15px;
+}
+
+.top-social-icons {
+  display: flex;
+ justify-content: center;
+}
+
+
+}
+/* Close Button */
+.top-close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 20px;
+  border: none;
+  background: #ddd;
+  border-radius: 50%;
+  cursor: pointer;
+  color: #003580;
+
+}
+
+
+/* Promo Image */
+.top-promo-image {
+  width: 100%;
+  border-radius: 10px;
+}
+
+/* Promo Text */
+.top-promo-text {
+  margin-top: 20px;
+  color: #003580;
+}
+
+.top-promo-text h3 {
+  font-weight: bold;
+}
+
+.top-promo-text ul {
+  padding: 0;
+  margin: 0;
+}
+
+.top-promo-text li {
+  list-style-type: none;
+  margin-top: 5px;
+  padding-left: 40px;
+  background-image: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 16 16"%3E%3Ccircle cx="8" cy="8" r="8" fill="%23003580" /%3E%3Cpath fill="none" stroke="%23ffffff" stroke-width="2" d="M4 8l2 2l6-6" /%3E%3C/svg%3E');
+  background-size: 15px 15px;
+  background-repeat: no-repeat;
+  background-position: left center;
+}
+
+/* Input Wrapper */
+.top-input-wrapper {
+  display: flex;
+  gap: 10px;
+}
+
+  /* ซ่อนเมนูหลักและแสดงปุ่ม hamburger ในหน้าจอเล็ก */
+  .top-menu .hamburger-menu {
+    display: none;
+  }
+  /* 📌 สไตล์สำหรับ Icon */
+/* สไตล์พื้นฐานสำหรับ Icon */
+.top-password-icon {
+  cursor: pointer; /* ให้ cursor เป็น pointer เมื่อวางบน icon */
+  margin-left: 10px; /* ระยะห่างทางซ้าย */
+  margin-top: 20px; /* ระยะห่างทางบน */
+  transition: transform 0.3s ease; /* เพิ่มการเคลื่อนไหวเมื่อกด */
+  color: #003580; /* สีของไอคอน */
+  position: absolute; /* ตั้งตำแหน่งเป็น absolute เพื่อให้สามารถจัดการตำแหน่งได้ */
+  right: 10px; /* ขอบด้านขวา */
+  top: 15px; /* ขอบด้านบน */
+}
+
+/* 📌 สไตล์เมื่อ hover icon */
+.top-password-icon:hover {
+  transform: scale(1.1); /* ทำให้ icon ขยายเมื่อ hover */
+}
+
+
+
+
+
+
+/* เมนูด้านขวา - ค่าเริ่มต้นแสดงเป็นแนวนอน */
+.top-right-menu {
+  display: flex;
+  align-items: center;
+  gap: 1px;
+}
+
+/* ปุ่มแฮมเบอร์เกอร์ - ซ่อนบนจอใหญ่ */
+.top-hamburger {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: #003580;
+}
+
+/* ปิดเมนูเริ่มต้น */
+.top-right-menu.open {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 60px;
+  right: 10px;
+  background: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 15px;
+  border-radius: 8px;
+  z-index: 20000;
+  gap: 10px;
+}
+
+/* Responsive - ซ่อนเมนูด้านขวาบนจอเล็ก และใช้แฮมเบอร์เกอร์ */
+@media (max-width: 760px) {
+  .top-right-menu {
+    display: none;
+  }
+  
+  .top-right-menu.open {
+    display: flex;
+  }
+
+  .top-right-section {
+    position: relative;
+  }
+
+  .top-hamburger {
+    display: block;
+  }
+  /* กล่องค้นหา */
+  .top-search-box {
+    margin-right: 0;
+  }
+  .top-budget-box {
+    margin-right: 0;
+  }
+  
+  /* ปุ่มเข้าสู่ระบบและสมัครสมาชิก */
+  .top-sign-in-button,
+  .top-create-account-button {
+    margin-left: 0;
+    gap: 10px; /* ระยะห่างระหว่างไอคอนและข้อความ */
+   width: 100%;
+  }
+  /* กล่องภาษา */
+  .top-language-box {
+    margin-right: 0;
+  }
+ 
+  
+  /* กล่องสกุลเงิน */
+  .top-currency-box {
+   
+    margin-right: 0;
+  }
+  .top-menu-item {
+    margin: 0 5px;
+    font-size: 14px;
+  }
+}
+@media (max-width: 350px) {
+   /* การจัดการเมนูไอเท็ม ค่าเริ่มต้นคือหน้าแรกเสมอ */
+   .top-menu-item {
+    margin: 0 5px;
+    font-size: 12px;
+  }
+
+  }
+  
+/* Responsive - ซ่อนเมนูด้านขวาบนจอเล็ก และใช้แฮมเบอร์เกอร์ */
+@media (max-width: 790px) {
+  .top-right-menu {
+    display: none;
+  }
+  
+  .top-right-menu.open {
+    display: flex;
+  }
+
+  .top-right-section {
+    position: relative;
+  }
+
+  .top-hamburger {
+    display: block;
+  }
+  /* กล่องค้นหา */
+  .top-search-box {
+    margin-right: 0;
+  }
+  .top-budget-box {
+    margin-right: 0;
+  }
+  
+  /* ปุ่มเข้าสู่ระบบและสมัครสมาชิก */
+  .top-sign-in-button,
+  .top-create-account-button {
+    margin-left: 0;
+    gap: 10px; /* ระยะห่างระหว่างไอคอนและข้อความ */
+   width: 100%;
+  }
+  /* กล่องภาษา */
+  .top-language-box {
+    margin-right: 0;
+  }
+ 
+  
+  /* กล่องสกุลเงิน */
+  .top-currency-box {
+   
+    margin-right: 0;
+  }
+  .top-menu-item {
+    margin: 0 5px;
+    font-size: 15px;
+  }
+}
+  
+/* Responsive - ซ่อนเมนูด้านขวาบนจอเล็ก และใช้แฮมเบอร์เกอร์ */
+@media (min-width: 800px) and (max-width: 1000px) {
+  .top-sign-in-button span,
+  .top-create-account-button span {
+    display: none;
+  }
+  .top-menu-item {
+    margin: 0 5px;
+    font-size: 15px;
+  }
+  .top-search-box,
+  .top-budget-box {
+    display: flex;
+    align-items: center;
+    gap: 1px; 
+  }
+
+  .top-search-input {
+    width: 100px; 
+    padding: 0; 
+    font-size: 14px;
+  }
+
+  .top-search-button {
+    padding: 5px; 
+    font-size: 14px; 
+  }
+
+  .top-budget-input {
+    width: 100px; 
+    padding: 0; 
+    font-size: 14px; 
+  }
+
+  .top-budget-icon {
+    font-size: 20px; /* ลดขนาดไอคอน */
+    margin-left: 8px; /* เพิ่มระยะห่างจาก input */
+  }
+}
+@media (max-width: 1200px) {
+  /* การจัดการเมนูไอเท็ม ค่าเริ่มต้นคือหน้าแรกเสมอ */
+  .top-menu-item {
+   margin: 0 1px;
+   font-size: 12px;
+ }
+
+ }
+
+
+/* Responsive - ซ่อนเมนูด้านขวาบนจอเล็ก และใช้แฮมเบอร์เกอร์ */
+@media (min-width: 800px) and (max-width: 1000px) {
+  .top-promo-text h3 {
+    font-size: 14px; /* ลดขนาด h3 เมื่อจอเล็ก */
+  }
+
+  .top-promo-text ul {
+    font-size: 13px; /* ลดขนาดข้อความใน ul */
+    text-align: left;
+  }
+
+  .top-promo-text li {
+    margin-bottom: 3px; /* ลดระยะห่างระหว่างรายการ */
+  }
+  /* Social Text */
+.top-social-login {
+
+  margin-top: 30px;
+  font-size: 16px;
+}
+}
+
+
+
+
+ 

@@ -1,0 +1,138 @@
+.package-container {
+    padding: 40px 20px;
+    text-align: center;
+    background-image: url('https://res.klook.com/images/fl_lossy.progressive,q_65/c_fill,w_1280,h_820/w_79,x_14,y_14,g_south_west,l_Klook_water_br_trans_yhcmh3/activities/h0izg1khn4nulexyeqqh/MtFujiExplorationTour%EF%BD%9CArakurayamaSengenPark%C2%B7TendiTown%C2%B7OshinoHakkai%C2%B7KawaguchikoOishiPark%C2%B7SaikoHealingReaganFieldDayTour(withfreeJapaneseKusaMochi).webp');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .package-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+      to bottom,
+      rgba(255, 255, 255, 5) 0%,
+      rgba(255, 255, 255, 0.5) 50%,
+      rgba(255, 255, 255, 2) 100%
+    );
+    z-index: 1;
+  }
+  
+  .package-container > * {
+    position: relative;
+    z-index: 2;
+  }
+  
+  .package-title {
+    font-size: 2.5rem;
+    color: #003580;
+    margin-bottom: 5px;
+  }
+  
+  .package-underline {
+    width: 150px;
+    height: 3px;
+    background-color: #003580;
+    margin: 0 auto 30px;
+  }
+  
+  .package-subtitle {
+    font-size: 1.2rem;
+    color: #666;
+    margin-bottom: 30px;
+  }
+  
+  .package-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    margin: 0 auto;
+    max-width: 1000px;
+  }
+  
+  .package-card {
+    width: calc(50% - 20px);
+    max-width: 500px;
+    height: 300px;
+    border-radius: 20px;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  
+  .package-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+  }
+  
+  @media (max-width: 768px) {
+    .package-card {
+      width: 100%;
+      height: 250px;
+    }
+    .package-subtitle {
+      font-size: 1rem;
+      color: #666;
+      margin-bottom: 30px;
+    }
+  .package-title {
+    font-size: 1.5rem;
+    color: #003580;
+    margin-bottom: 5px;
+  }
+  .package-name {
+    font-size: 1.4rem;
+    margin-bottom: 5px;
+    color: #fff;
+  }
+  }
+  
+  .package-overlay {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 20px;
+    background: linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, 0.7) 100%);
+    color: #fff;
+    text-align: left;
+    border-radius: 0 0 20px 20px;
+  }
+  
+  .package-name {
+    font-size: 1.4rem;
+    margin-bottom: 5px;
+    color: #fff;
+  }
+  
+  .package-description {
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+    color: #ddd;
+  }
+  
+  .package-button {
+    padding: 8px 20px;
+    font-size: 0.9rem;
+    color: #003580;
+    background-color: #fff;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+  }
+  
+  .package-button:hover {
+    background-color: #ddd;
+    transform: scale(1.05);
+  }
+  

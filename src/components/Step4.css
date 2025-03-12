@@ -1,0 +1,72 @@
+/*  กำหนดตัวแปรสีหลัก */
+:root {
+    --primary-color: #003580;  /* สีฟ้าเข้ม */
+    --bg-font-btn-color: #fff; 
+    --share-button-color: #3b5998; /* สีฟ้า Facebook */
+    --notify-color: #ccc; 
+}
+
+
+.step4-page-container {
+    margin-top: -40px;
+    font-family: Arial, sans-serif;
+    color: var(--primary-color);
+  }
+
+.step4-container {
+    font-family: 'Prompt', sans-serif;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: var(--bg-font-btn-color);
+  }
+
+  .step4-check-seats {
+    font-size: 16px;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+  }
+
+  .step4-notify-friends {
+    font-size: 14px;
+    color: var(--notify-color);
+  }
+
+  .step4-button {
+    background-color: var(--share-button-color);
+    color: var(--bg-font-btn-color);
+    padding: 6px 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin: 0 auto 20px;
+  }
+  
+  .step4-button-text {
+    line-height: 16px;
+  }
+  .step4-terms-header {
+    font-size: 16px;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+  }
+  
+  .step4-terms-list {
+    font-size: 14px;
+    color: var(--primary-color)y;
+    text-align: left;
+    line-height: 1.8;
+  }
+  
+  
+  @media (max-width: 768px) {
+    .step4-main-content {
+      flex-direction: column;
+      align-items: center;
+    }
+}

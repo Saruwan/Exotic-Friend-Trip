@@ -1,0 +1,228 @@
+.footer {
+    background-color: #0b3a6a;
+    color: white;
+    padding: 70px 0;
+    text-align: center;
+    
+}
+.footer-top {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 30px;
+    background-image: url('https://artralux.co.th/wp-content/uploads/2023/07/10-%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B9%80%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B8%A2%E0%B8%A7%E0%B8%A4%E0%B8%94%E0%B8%B9%E0%B9%83%E0%B8%9A%E0%B9%84%E0%B8%A1%E0%B9%89%E0%B8%9C%E0%B8%A5%E0%B8%B4%E0%B8%8D%E0%B8%B5%E0%B9%88%E0%B8%9B%E0%B8%B8%E0%B9%88%E0%B8%99-2.jpg');
+    background-size: cover;
+    background-position: center ; /* เลื่อนขึ้นจาก center เล็กน้อย */
+    padding: 10px;
+    position: relative;
+    margin-top: -30px;
+}
+
+
+.footer-top::before {
+    content: "";
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(255, 255, 255, 0.3); /* สีขาวโปร่ง */
+}
+
+.footer-top h2 {
+    font-size: 1.7em;
+    position: relative;
+    z-index: 1;
+}
+
+.subscription {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 5px;
+    border: 1px;
+    position: relative;
+    z-index: 1;
+}
+
+.email-input {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    width: 250px;
+}
+
+.subscribe-button {
+    background-color: #004c99;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.or {
+    font-size: 1.2em;
+    margin: 0 10px;
+}
+
+.qr-code {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.qr-code img {
+    width: 105px;
+    height: 105px;
+}
+
+.qr-code p {
+    margin: 0;
+    font-size: 16px;
+    
+}
+
+.footer-links {
+    display: flex;
+    flex-wrap: wrap; /* อนุญาตให้คอลัมน์ขึ้นบรรทัดใหม่เมื่อพื้นที่ไม่พอ */
+    justify-content: space-between; /* กระจายคอลัมน์ให้ห่างกัน */
+    gap: 5px; /* เพิ่มช่องว่างระหว่างคอลัมน์ */
+    margin: 20px; /* เว้นขอบจากขอบจอ */
+  }
+  
+  .footer-column {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    flex-basis: calc(25% - 20px); /* ให้แต่ละคอลัมน์กว้างประมาณ 25% */
+  }
+
+.footer-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 0.8em;
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
+}
+
+.footer-bottom {
+    background-color: #f8941d;
+    color: white;
+    padding: 0.011em 0;
+    font-size: 0.7em;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.scroll-to-top {
+    position: fixed;
+    bottom: 80px;
+    right: 50px;
+    background-color: orange;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    font-size: 24px;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease;
+    z-index: 9999; /* ทำให้ปุ่มอยู่ด้านบนสุด */
+}
+
+.scroll-to-top:hover {
+    background-color: darkorange;
+}
+
+/* เพิ่ม Media Queries สำหรับ Responsive Design */
+@media (max-width: 768px) {
+    .footer-top {
+        padding: 10px;
+      
+    }
+
+    .footer-top h2 {
+        font-size: 1.5em;
+        margin-bottom: 20px;
+    }
+
+   
+    .qr-code img {
+        width: 90px;
+        height: 90px;
+    }
+
+    .scroll-to-top {
+        bottom: 60px;
+        right: 90px;
+        width: 50px;
+        height: 50px;
+        font-size: 30px;
+    }
+
+    .footer-bottom {
+        font-size: 0.9em;
+    }
+    .footer-links {
+        justify-content: center; /* จัดให้อยู่ตรงกลาง */
+        gap: 20px; /* เพิ่มช่องว่างระหว่างคอลัมน์ */
+      }
+    
+      .footer-column {
+        flex-basis: calc(30% - 60px); /* แต่ละคอลัมน์กว้าง 50% ของพื้นที่ */
+        text-align: left; 
+
+      }
+    
+}
+
+
+@media (max-width: 480px) {
+    .footer-top h2 {
+        font-size: 1.2em;
+    }
+
+
+    .subscription {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .email-input {
+        width: 100%;
+        margin-bottom: 5px;
+    }
+
+    .scroll-to-top {
+        width: 45px;
+        height: 45px;
+        font-size: 28px;
+    }
+
+    .footer-bottom {
+        font-size: 0.7em;
+        
+    }
+    .scroll-to-top {
+        bottom: 50px;
+        right: 20px;
+        width: 30px;
+        height: 30px;
+        font-size: 20px;
+    }
+    .footer-column {
+        flex-basis: calc(60% - 60px); /* แต่ละคอลัมน์กว้าง 50% ของพื้นที่ */
+    }
+}

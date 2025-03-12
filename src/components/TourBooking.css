@@ -1,0 +1,557 @@
+
+
+
+
+.booking-container {
+    max-width: 900px;
+    margin: 0 auto;
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    justify-content: center;
+    align-items: center;
+  }
+  /* กำหนดให้ส่วนต่างๆ แสดงเป็นคอลัมน์เมื่อหน้าจอเล็กกว่า 768px */
+@media (max-width: 768px) {
+  .booking-main-content {
+   display: flex;
+    flex-direction: column; /* เปลี่ยนจากแถวเป็นคอลัมน์ */
+    justify-content: center; /* จัดคอนเทนต์ให้อยู่กลาง */
+    align-items: center; /* จัดแนวตั้งให้อยู่กลาง */
+    width: 100%; /* ใช้ความกว้างเต็ม */
+  }
+
+  .booking-left-column, .booking-right-column {
+    flex: 1 1 100%; /* ให้แต่ละคอลัมน์เต็ม 100% ของพื้นที่ */
+    margin: 0; /* ลบการเว้นระยะด้านข้าง */
+    width: 100%;
+    
+  }
+
+  .booking-box {
+    width: 100%; /* ทำให้กรอบเป็น 100% ของความกว้างหน้าจอ */
+    margin: 30px 0; /* เพิ่มระยะห่างระหว่างกรอบ */
+  }
+
+  .booking-date-dropdown, .booking-search-input {
+    width: 100%; /* ให้ select และ input กว้างเต็มหน้าจอ */
+  }
+
+  .booking-book-button {
+    width: 100%; /* ปรับขนาดปุ่มให้กว้างเต็มหน้าจอ */
+  }
+ 
+
+  
+}
+
+  .booking-tour-card {
+    display: flex;
+    border: 2px solid #003580;
+    border-radius: 8px;
+    padding: 10px;
+    margin-bottom: 10px;
+    align-items: center;
+    position: relative;
+  }
+  
+  .booking-card-left {
+    flex: 0 0 auto;
+  }
+  
+  .booking-tour-image {
+    width: 170px;
+    height: 150px;
+    border-radius: 8px;
+    object-fit: cover;
+  }
+  
+  .booking-card-right {
+    flex: 1;
+    margin-left: 20px;
+    text-align: left;
+  }
+  
+  .booking-tour-title {
+    font-size: 18px;
+    font-weight: bold;
+    color: #003580;
+    margin: 0;
+  }
+  
+  .booking-tour-places {
+    font-size: 14px;
+    color: #ff6f00;
+    margin-bottom: 40px;
+  }
+  
+  .booking-tour-location {
+    font-size: 14px;
+    color: #003580;
+    margin-bottom: 10px;
+  }
+  
+  
+  .booking-steps {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  .booking-step {
+    text-align: center;
+    color: #ccc;
+    cursor: pointer;
+  }
+  
+  
+  
+  .booking-line {
+    flex: 0.4;
+    height: 2px;
+    background-color: #ccc;
+  }
+ 
+  .booking-header {
+    margin-top: 20px;
+    text-align: left;
+    margin-bottom: 20px;
+    color: #003580;
+  }
+  .booking-header span {
+    font-weight: normal; /* ข้อความที่อยู่ใน <span> ให้เป็นน้ำหนักปกติ */
+  }
+   
+  .booking-highlighted-text {
+    font-size: 14px;
+    color: #ff6f00;
+    margin: 15px 0,
+  }
+   .booking-icons {
+    margin-right: 10px;
+   }
+   .booking-hr {
+    border: none;
+    border-top: 1px solid #d3d3d3; 
+    margin: 20px 0;
+    margin-bottom: 50px; 
+   }
+   .booking-circle {
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    border-radius: 50%;
+    text-align: center;
+    margin: 0 auto;
+    border: 2px solid #ccc;
+    background-color: #fff;
+    color: #ccc;
+    cursor: not-allowed;
+  }
+  
+  /* กำลังอยู่ในขั้นตอนนี้ */
+  .booking-circle.active {
+    background-color: #003580;
+    border-color: #003580;
+    color: #fff;
+    cursor: pointer;
+  }
+  
+  /* ผ่านขั้นตอนนั้นแล้ว */
+  .booking-circle.completed {
+    background-color: #ccc;
+    border-color: #ccc;
+    color: #fff;
+    cursor: pointer;
+  }
+  
+   .booking-disabled-circle {
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    border-radius: 50%;
+    background-color: #ccc; 
+    border: 2px solid #ccc; 
+    text-align: center;
+    margin: 0 auto;
+    color: #fff; 
+  }
+ 
+  .booking-active-step .booking-step-text {
+    color: #003580; /* ถ้าขั้นตอนนี้ถูกเลือก */
+  }
+  
+  .booking-inactive-step .booking-step-text {
+    color: #ccc; /* ถ้าขั้นตอนนี้ยังไม่ถูกเลือก */
+    
+  }
+  
+  .booking-disabled-step-text .booking-step-text {
+    color: #ccc; /* สีของข้อความสำหรับขั้นตอนที่ถูกปิดการใช้งาน */
+   
+  }
+  
+  .booking-step-text span {
+    font-weight: normal; /* ทำให้ข้อความย่อยเป็นปกติ */
+  }
+  
+
+  .booking-active-step {
+    color: #003580;
+  }
+  .booking-inactiveStep {
+    color: #999;
+  }
+  
+  .booking-page-container {
+    margin: 20px auto;
+    font-family: Arial, sans-serif;
+    color: #003580;
+  }
+  .booking-main-content {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    
+  }
+  .booking-centered-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .booking-right-column {
+    flex: 2;
+    background-color: transparent;
+    margin-top: -20px;
+    height: auto;
+    width: 100%;
+  }
+.booking-right-section { 
+    display: flex; 
+    gap: 20px; 
+    margin-left: auto;
+}
+.booking-left-column {
+    flex: 1;
+    margin-top: -20px;
+  }
+
+  .booking-box {
+    border: 1px solid #ccc;
+    padding: 15px;
+    border-radius: 8px;
+  }
+  
+  .booking-box-title {
+    font-size: 18px;
+    margin: -5px 0 6px;
+    color: #003580;
+    text-align: left;
+  }
+  
+  .booking-underline {
+    border: none;
+    border-top: 1px solid #ccc;
+    margin: 0 0 10px;
+  }
+  
+  .booking-box-content {
+    line-height: 2;
+    text-align: left;
+  }
+  
+  .booking-date-box {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 10px;
+    height: 80px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    flex-direction: column;
+  }
+  
+  .booking-date-dropdown {
+    width: 300px;
+    height: 40px;
+    border-radius: 4px;
+    border: none;
+    font-size: 18px;
+    color: #888;
+  }
+  
+  .booking-date-label {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 1px;
+    color: #000;
+  }
+  
+  .booking-person-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    background-color: #fff;
+    margin-bottom: 10px;
+    height: 50px;
+  }
+  
+  .booking-person-info {
+    display: flex;
+    flex-direction: column;
+    color: #000;
+  }
+  
+  .booking-sub-text {
+    font-size: 12px;
+    color: #888;
+  }
+  
+  .booking-price {
+    color: #f57c00;
+    font-weight: bold;
+    margin-top: -10px;
+    min-width: 80px;
+    text-align: left;
+  }
+  
+  .booking-counter {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+  
+  .booking-counter-button {
+    width: 25px;
+    height: 25px;
+    border: 1px solid #888;
+    border-radius: 50px;
+    cursor: pointer;
+    background: transparent;
+    color: #888;
+  }
+  
+  .booking-counter-value {
+    min-width: 20px;
+    text-align: center;
+    color: #000;
+  }
+  
+  .booking-total-box {
+    margin-top: 10px;
+  }
+  
+  .booking-total-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+  
+  .booking-total-label {
+    font-size: 20px;
+    color: #333;
+    margin: 0;
+    text-align: left;
+  }
+  
+  .booking-total-price {
+    font-size: 20px;
+    color: #333;
+    margin-top: -1px;
+    text-align: right;
+  }
+  
+  .booking-note {
+    font-size: 12px;
+    color: #888;
+    margin-top: -15px;
+    text-align: left;
+  }
+  
+  .booking-book-button {
+    margin-top: 10px;
+    padding: 10px 15px;
+    background-color: #003580;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+  }
+  
+  .booking-text {
+    font-size: 16px;
+    color: #000;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+  }
+  
+  .booking-total-text {
+    font-size: 18px;
+    font-weight: bold;
+    color: #000;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
+  }
+  
+  .booking-promotion-section {
+    margin-top: 20px;
+  }
+  
+  .booking-promotion-label {
+    font-size: 18px;
+    font-weight: bold;
+    color: #000;
+  }
+  
+  .booking-search-container {
+    display: flex;
+    
+    align-items: center;
+    margin-top: 10px;
+    width: 100%;
+  }
+  
+  .booking-search-input {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    padding-right: 35px; /* เพิ่มช่องว่างทางขวาเพื่อให้ไอคอนไม่ทับช่องกรอก */
+  }
+  
+.booking-search-container i {
+    position: absolute;
+    right: 10px;
+    color: #aaa;
+  }
+
+.booking-promotion-section ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .booking-suggestion-item {
+    display: flex;
+    justify-content: space-between; /* ให้ code กับ discount อยู่ซ้าย-ขวา */
+    padding: 5px;
+    background-color: #f5f5f5; /* หรือ #f0f0f0 */
+    margin: 2px 0;
+    cursor: pointer;
+  }
+  
+  .booking-suggestion-item.booking-disabled {
+    color: gray;
+    cursor: not-allowed;
+  }
+  
+  .booking-suggestion-item.booking-valid {
+    color: #003580;
+  }
+  
+  
+  .booking-promotion-section p {
+    color: red;
+    margin-top: 5px;
+  }
+  .booking-search-icon {
+    position: absolute;
+    right: 10px; /* วางไอคอนทางขวาสุดของช่องกรอก */
+    color: #aaa;
+  }
+  
+  
+  .booking-discount-price {
+    color: red;
+    justify-content: space-between;
+    display: flex;
+    margin-bottom: 20px;
+  }
+  
+  .booking-centered-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+  }
+  .booking-button-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+  }
+  .booking-next-button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #003580;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 150px; /* ปรับความกว้างให้พอดีกับเนื้อหา */
+    margin-left: auto; /* จัดปุ่มให้ไปทางขวา */
+    display: block; /* ทำให้ปุ่มแสดงเป็นบล็อก */
+  }
+  @media (max-width: 350px) {
+    
+    .booking-promotion-label {
+      font-size: 16px;
+     
+    }
+    .booking-total-text {
+      font-size: 15px;
+     
+    }
+    
+    .booking-tour-card {
+      flex-direction: column; /* เปลี่ยนจากแถวเป็นคอลัมน์ */
+      align-items: flex-start; /* จัดไอเท็มให้เรียงจากซ้าย */
+    }
+  
+    .booking-tour-image {
+      width: 100%; /* ทำให้รูปภาพกว้างเต็ม */
+      height: auto; /* ปรับความสูงให้สมดุลกับอัตราส่วน */
+    }
+  
+    .booking-card-right {
+      margin-left: 0;
+      text-align: left;
+    }
+  
+    .booking-date-dropdown,
+    .booking-search-input {
+      width: 100%; /* ให้ select และ input กว้างเต็มหน้าจอ */
+    }
+  
+    .booking-book-button {
+      width: 100%; /* ให้ปุ่มกว้างเต็มหน้าจอ */
+    }
+  
+    .booking-suggestion-item {
+      flex-direction: column; /* จัดเรียงแนวตั้งสำหรับรายการคำแนะนำ */
+      align-items: flex-start; /* จัดเรียงจากซ้าย */
+    }
+  
+    .booking-total-container {
+      flex-direction: column; /* จัดคอลัมน์แนวตั้ง */
+      align-items: flex-start;
+    }
+  
+    .booking-next-button {
+      width: 100%; /* ให้ปุ่มกว้างเต็มหน้าจอ */
+    }
+  
+    .booking-date-dropdown {
+      width: 100%; /* ปรับขนาด input */
+    }
+  }
+  

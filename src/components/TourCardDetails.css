@@ -1,0 +1,217 @@
+.d-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 20px auto;
+    font-family: Arial, sans-serif;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .d-separator {
+    width: 100%;
+    height: 1px;
+    background-color: #ddd;
+    margin: 20px 0;
+    margin-top: 35px;
+  }
+
+ 
+  .d-program-header {
+    font-size: 24px;
+    font-weight: bold;
+    color: #003580;
+    margin-bottom: 10px;
+    text-align: left;
+  }
+  .d-program-content {
+    border: 1px solid #003580;
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 20px;
+    font-size: 16px;
+    line-height: 1.5;
+  }
+  .d-day-header {
+    padding: 10px;
+    border-radius: 5px;
+    font-weight: bold;
+    color: #003580;
+  }
+  .d-day-content {
+    padding-left: 20px;
+  }
+
+  .d-icons {
+    margin-right: 10px;
+  }
+
+  
+.d-section {
+  margin-bottom: 20px;
+}
+.d-title {
+  font-size: 20px;
+  text-align: left;
+  color: #003580;
+}
+.d-underline {
+  margin-top: 20px;
+  border: 1px solid #ddd;
+  margin-bottom: -20px;
+}
+.d-facilities {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 10px;
+  color: #003580;
+}
+.d-facility-item {
+  display: flex;
+  flex-direction: column; 
+  align-items: center;  
+  text-align: center;
+  width: 100px;         
+}
+.d-icon {
+  font-size: 40px;      
+  color: #ff6f00;   
+  margin-bottom: 10px;
+}
+.d-highlights {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+  color: #003580;
+  padding-left: 10px;   
+  padding-right: 10px;   
+}
+.d-highlight-item {
+  display: flex;
+  align-items: center;
+  
+}
+.d-check-icon-orange {
+  background-color: #FF6F00;
+  border-radius: 50%;
+  padding: 5px;
+  margin-right: 10px;
+  
+  
+}
+.d-check-icon-green {
+  background-color: green;
+  border-radius: 50%;
+  padding: 5px;
+  margin-right: 10px;
+  
+  
+}
+.d-check-icon-red {
+  background-color: red;
+  border-radius: 50%;
+  padding: 5px;
+  margin-right: 10px;
+}
+.d-check-icon {
+  color: white;
+  font-size: 14px;
+}
+.d-expense-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 50px; /* ระยะห่างระหว่างกลุ่ม */
+}
+.d-expense-group {
+  flex: 1;
+  color: #003580;
+}
+.d-expense-item {
+  display: flex;
+  align-items: center;
+  text-align: left;
+  gap: 5px;
+  margin-bottom: 15px;
+}
+.d-description {
+  text-align: left;
+  color: #003580;
+  margin-left: 15px;
+}
+/* สำหรับ container ของ title */
+.d-title-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+/* สัญลักษณ์สีส้มด้านหน้า title */
+.d-title-symbol {
+  width: 5px;         /* ความกว้างของแถบสี */
+  height: 30px;        /* ความสูงของแถบสี */
+  background-color: #FF6F00; 
+  margin-right: 10px;   /* ระยะห่างระหว่างแถบสีและข้อความ */
+  border-radius: 5px;   
+}
+.d-expense-header {
+  font-size: 16px;
+  text-decoration: underline; 
+  color: #003580;
+}
+
+
+@media (max-width: 768px) {
+  .d-expense-container {
+    flex-direction: column; /* เปลี่ยนจากแนวนอนเป็นแนวตั้ง */
+    align-items: flex-start; /* จัดให้อยู่ทางซ้าย */
+    gap: 5px;
+  }
+  .d-expense-group {
+    margin-bottom: 20px; /* เพิ่มระยะห่างระหว่างกลุ่ม */
+  }
+  .d-title {
+    font-size: 18px;
+  }
+  .d-icon {
+    font-size: 20px;      
+  }
+}
+
+
+@media (max-width: 480px) {
+  .d-expense-container {
+    flex-direction: column; /* เปลี่ยนจากแนวนอนเป็นแนวตั้ง */
+    align-items: flex-start; /* จัดให้อยู่ทางซ้าย */
+    gap: 5px;
+  }
+  .d-expense-group {
+    margin-bottom: 20px; /* เพิ่มระยะห่างระหว่างกลุ่ม */
+  }
+  .d-title {
+    font-size: 18px;
+  }
+  .d-icon {
+    font-size: 20px;      
+  }
+  
+}
+
+@media (max-width: 350px) {
+  .d-expense-container {
+    flex-direction: column; /* เปลี่ยนจากแนวนอนเป็นแนวตั้ง */
+    align-items: flex-start; /* จัดให้อยู่ทางซ้าย */
+    gap: 5px;
+  }
+  .d-expense-group {
+    margin-bottom: 20px; /* เพิ่มระยะห่างระหว่างกลุ่ม */
+  }
+  .d-title {
+    font-size: 16px;
+  }
+  .d-icon {
+    font-size: 20px;      
+  }
+  .d-container {
+    width: 100%;
+    max-width: 300px;
+  }
+}

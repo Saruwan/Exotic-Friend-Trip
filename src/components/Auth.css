@@ -1,0 +1,64 @@
+.register-modal {
+    content: '';
+    background-color: white;
+    width: 600px;
+    max-width: 90%;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    display: flex;
+    overflow: hidden;
+}
+
+.register-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.register-left {
+    width: 50%;
+    padding: 20px;
+}
+
+.register-right {
+    width: 50%;
+    background-color: #f7f7f7;
+    padding: 20px;
+    text-align: center;
+}
+
+.social-login {
+    margin-top: 15px;
+}
+
+.social-button {
+    margin: 5px;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+}
+
+.promo-image {
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.membership-benefits {
+    text-align: left;
+}
+
+.membership-benefits ul {
+    list-style: none;
+    padding: 0;
+}

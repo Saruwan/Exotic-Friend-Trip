@@ -1,0 +1,655 @@
+/*  กำหนดตัวแปรสีหลัก */
+:root {
+    --primary-color: #003580;  /* สีฟ้าเข้ม */
+    --secondary-color: #FF6F00;
+    --w-color: #fff;
+    --footer-text-color: #b4b4b4; /* สีส้ม */
+    --border-color: #ccc; 
+    --card-gradient: #003366;
+    --chip-1: #d4af37;
+    --chip-2: #b8860b;
+}
+
+
+.step3-container {
+    padding: 20px;
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .step3-card {
+    width: 350px;
+    height: 200px;
+    background-image: linear-gradient(135deg, #003580, #003366);
+    color: #fff;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    position: relative;
+    margin-top: -15px;
+    background-size: cover;
+  }
+  
+  .step3-chip-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    margin-top: 10px;
+  }
+  
+  .step3-chip {
+    width: 66px;
+    height: 50px;
+    background: linear-gradient(135deg, #d4af37, #b8860b);
+    border-radius: 8px;
+    top: 20px;
+    left: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+  }
+  
+  
+  .step3-chip-lines {
+    width: 60%;
+    height: 60%;
+    background: linear-gradient(90deg, rgba(255,255,255,0.3) 10%, transparent 30%);
+    border-radius: 5px;
+    position: relative;
+  }
+  
+  .step3-card-bank-name {
+    font-size: 17px;
+    font-weight: bold;
+    text-align: right;
+  }
+  
+  .step3-card-number {
+    font-size: 22px;
+    letter-spacing: 2px;
+    text-align: center;
+    margin-top: -5px;
+    margin-bottom: -10px;
+  }
+  
+  .step3-card-details {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+  }
+  
+  .step3-card-label {
+    font-size: 12px;
+    opacity: 0.8;
+  }
+  
+  .step3-card-data {
+    font-size: 12px;
+    margin-top: 5px;
+    font-weight: bold;
+  }
+  
+  .step3-footer {
+    position: absolute;
+    bottom: 10px;
+    right: 20px;
+    color: #b4b4b4;
+    font-size: 10px;
+  }
+  
+  .step3-footer-text {
+    font-size: 10px;
+    color: #b4b4b4;
+  }
+  
+  .step3-payment-form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .step3-form-field {
+    margin-bottom: 15px;
+  }
+  
+  .step3-label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 15px;
+    text-align: left;
+    font-size: 16px; /* ขนาดตัวอักษรปกติ */
+  }
+  
+  .step3-input {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .step3-card-input {
+    width: 96%;
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .step3-expiry-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+  }
+  
+.step3-expiry-container div {
+  flex: 1; /* ทำให้ทั้งสองช่องใช้พื้นที่เท่าๆ กัน */
+}
+
+@media (max-width: 768px) {
+  .step3-expiry-container {
+    display: block; /* จัดให้อยู่ในรูปแบบบล็อคเมื่อหน้าจอเล็ก */
+  }
+  
+  .step3-expiry-container div:nth-child(2) {
+    margin-top: 5px; /* เพิ่มระยะห่างระหว่าง Expiry Date และ CVV */
+  }
+}
+  @media (max-width: 768px) {
+    
+  .step3-card {
+    width: 100%;
+  }
+  .step3-card-input {
+    width: 100%; /* ให้ input กินความกว้างเต็ม */
+    max-width: 100%; /* ไม่ให้เกินความกว้าง */
+    padding: 10px;
+    box-sizing: border-box;
+  }
+  
+  @media (max-width: 768px) {
+    .step3-card-input {
+      width: 100%; /* ให้ช่องกรอกข้อมูลเต็มแถวเมื่อหน้าจอเล็ก */
+    }
+  }
+
+  }
+  .step3-expiry-inputs {
+    display: flex;
+    gap: 5px;
+  }
+  
+  .step3-input-small {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  .step3-input-cvv {
+    width: 100%; /* ให้ input ใช้พื้นที่เต็มแถว */
+  
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box; /* ให้ padding รวมกับขนาด width */
+  }
+  
+  @media (max-width: 768px) {
+    .step3-input-cvv {
+      width: 100%; /* ให้ขยายเต็มแถวในหน้าจอเล็ก */
+      max-width: 100%; /* ขยายเต็มแถวไม่เกินความกว้างของคอนเทนเนอร์ */
+    }
+  }
+  
+  .step3-card-save-button {
+    width: 80px;
+    background-color: #f7941d;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .step3-terms-text {
+    font-size: 14px;
+    text-align: left;
+    color: gray;
+    margin-top: 20px;
+    margin-bottom: 5px;
+  }
+  
+  .step3-dropdown-container {
+    display: flex;
+    margin-bottom: 20px;
+    flex-direction: column;
+    gap: 10px;
+    background-color: transparent;
+    width: 100%;
+  }
+  
+  .step3-dropdown {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    border-radius: 10px;
+    border: 1px solid #003580;
+    padding: 10px;
+    width: 100%;
+    justify-content: space-between;
+    box-sizing: border-box;
+  }
+  
+.step3-dropdown.invalid {
+    border: 1px solid red;
+  }
+  
+  .step3-dropdown.disabled {
+    cursor: not-allowed;
+  }
+  .step3-icon-circle-container {
+    display: flex;
+    align-items: center;
+  }
+  
+  .step3-icon-circle {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 1px solid #003580; /* สีขอบเริ่มต้น */
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 10px;
+  }
+  
+  .step3-icon-circle.selected {
+    border-color: #008530; /* สีขอบเมื่อเลือกแล้ว */
+  }
+  
+  .step3-icon-circle span {
+    color: #003580; /* สีของไอคอนติ๊กถูกเริ่มต้น */
+    font-size: 16px;
+  }
+  
+  .step3-icon-circle.selected span {
+    color: #008530; /* สีของไอคอนติ๊กถูกเมื่อเลือกแล้ว */
+  }
+  
+  .step3-icon-circle-container p {
+    color: #003580; /* สีของข้อความเริ่มต้น */
+    font-weight: normal;
+  }
+  
+  .step3-icon-circle-container.selected p {
+    color: #008530; /* สีของข้อความเมื่อเลือกแล้ว */
+  }
+  
+  .step3-text {
+    font-size: 16px;
+    color: #003580;
+  }
+  
+  .step3-selected-text {
+    font-size: 16px;
+  }
+  
+  .step3-bank-selection {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 20px;
+  }
+  
+  .step3-bank-column {
+    flex-basis: calc(33.33% - 7px);
+    display: flex;
+    justify-content: center;
+  }
+  @media (max-width: 1024px) {
+    .step3-bank-column {
+      flex-basis: calc(50% - 7px);
+    }
+    .step3-bank-selection {
+      gap: 5px;
+    }
+    
+  }
+  
+  .step3-bank-box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: transparent;
+    padding: 8px 18px;
+    border-radius: 8px;
+    border: 1px solid #d3d3d3;
+    width: 100%;
+  }
+  
+  .step3-bank-logo {
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+    border-radius: 50%;
+    margin-left: -10px;
+  }
+  
+  .step3-bank-name {
+    font-size: 14px;
+    flex: 1;
+    text-align: left;
+    margin: 0;
+  }
+  
+  .step3-check-circle {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    border: 1px solid #003580;
+    background-color: transparent;
+    cursor: pointer;
+    flex-shrink: 0;
+    margin-right: -10px;
+  }
+  
+  .step3-check-circle.selected {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    border: 1px solid #003580;
+    background-color: transparent;
+    cursor: pointer;
+    flex-shrink: 0;
+    margin-right: -10px;
+    position: relative;
+  }
+  
+  .step3-check-circle-inner {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background-color: #003580;
+    position: absolute;
+    top: 4px;
+    left: 4px;
+  }
+  .step3-check-circle-inner.selected {
+    background-color: #003580; /* สีของวงกลมด้านในเมื่อเลือก */
+  }
+  .step3-dashed-line {
+    border: none;
+    border-top: 1px dashed #ccc;
+    margin: 20px 0;
+  }
+  
+  .step3-bold-text {
+    font-weight: bold;
+    font-size: 25px;
+      color: #003580; /* คุณสามารถเปลี่ยนสีนี้ตามต้องการ */
+  margin-bottom: 20px;
+  }
+  .step3-text-center {
+  text-align: center;
+  font-size: 16px;
+  color: #555; /* สีข้อความสามารถปรับเปลี่ยนตามต้องการ */
+  margin-bottom: 10px;
+}
+.step3-text-left {
+  text-align: left;
+  font-size: 16px;
+  color: #003580; /* สีข้อความสามารถปรับเปลี่ยนตามต้องการ */
+  margin-bottom: 20px;
+}
+  
+  .step3-upload-container {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .step3-file-upload-container {
+    border: 1px solid #003580;
+    border-radius: 8px;
+    display: inline-block;
+  }
+  .step3-upload-container label {
+ 
+  color: #003580; /* สีของข้อความ */
+  font-weight: normal;
+  margin-bottom: 10px;
+  display: block;
+  text-align: left;
+  padding: 0;
+  margin: 0;
+}
+  .step3-file-input {
+    font-size: 16px;
+    padding: 8px;
+    border-radius: 4px;
+    border: 1px solid #003580;
+  }
+  
+  .step3-preview-container {
+    position: relative;
+    text-align: center;
+  }
+  
+  .step3-preview-image {
+    width: 250px;
+    height: auto;
+    object-fit: cover;
+    border-radius: 8px;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .step3-remove-button {
+    position: absolute;
+    top: -45px;
+    right: 15px;
+    background-color: rgba(255, 0, 0, 0.6);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    font-size: 18px;
+    text-align: center;
+    cursor: pointer;
+    z-index: 10;
+  }
+  
+  .step3-save-button {
+    background-color: #f8941d;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    display: block;
+    margin-left: auto;  /* ทำให้ปุ่มอยู่กึ่งกลาง */
+  }
+  
+  
+  .step3-selected-bank-logo {
+    width: 30px;
+    height: 30px;
+    margin-left: 10px;
+    border-radius: 50px;
+  }
+  
+  .step3-saved-text {
+    font-size: 16px;
+    color: green;
+  }
+  
+  .step3-details {
+    padding: 10px 0;
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .step3-account-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  .step3-account-label {
+    font-size: 16px;
+    color: black;
+    margin-right: 5px;
+  }
+  
+  .step3-account-value {
+    font-size: 16px;
+    font-weight: bold;
+    color: black;
+  }
+  
+  .step3-bank-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  .step3-logo-container {
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    overflow: hidden;
+  }
+  
+  .step3-branch-logo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .step3-bank-details {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 10px;
+  }
+  
+  .step3-bank-name-row {
+    text-align: left;
+    margin-bottom: 10px;
+  }
+  
+  .step3-branch-name {
+    font-size: 18px;
+    font-weight: bold;
+    color: black;
+  }
+  
+.step3-bank-logos {
+  display: flex;
+  gap: 10px;
+  margin-left: 10px;
+}
+
+.step3-bank-logos img {
+  width: 50px;  /* ขนาดเริ่มต้นของภาพ */
+  height: 25px;  /* ขนาดเริ่มต้นของภาพ */
+  border-radius: 0;  /* ให้เป็นสี่เหลี่ยมโดยไม่มีขอบกลม */
+}
+
+.step3-bank-logos img.mobile-bank,
+.step3-bank-logos img.internet-bank {
+  width: 30px;  /* ขนาดของภาพเมื่อเป็น Mobile Banking หรือ Internet Banking */
+  height: 30px;  /* ขนาดของภาพเมื่อเป็น Mobile Banking หรือ Internet Banking */
+  border-radius: 50%;  /* ขอบกลม */
+}
+
+  .step3-qr {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 8px;
+    align-items: center;
+    justify-content: center;
+  }
+  
+
+  @media (max-width: 760px) {
+   
+  .step3-dropdown {
+    display: flex;
+    align-items: flex-start; /* ให้มันชิดซ้าย */
+    flex-direction: column;
+  }
+   /* เมื่อขนาดหน้าจอเล็กกว่า 600px */
+   .step3-dropdown {
+    padding: 6px;
+    font-size: 14px;
+  }
+
+  .step3-icon-circle {
+    width: 20px;
+    height: 20px;
+  }
+  
+  .step3-bank-logos img {
+    max-width: 35px;
+    margin-bottom: 10px;
+  }
+  .step3-bank-column {
+    flex-basis: 100%; /* จอเล็กแสดง 1 ธนาคาร */
+  }
+
+  .step3-bank-box {
+    width: 100%; /* ให้ธนาคารเต็มความกว้างของหน้าจอ */
+  }
+
+  /* Mobile Banking */
+  .step3-bold-text {
+    font-size: 18px; /* ลดขนาดตัวอักษร */
+  }
+  
+  .step3-bank-name {
+    font-size: 14px; /* ลดขนาดตัวอักษร */
+  }
+  
+  .step3-account-label, .step3-account-value {
+    font-size: 13px; /* ลดขนาดตัวอักษร */
+  }
+  
+  .step3-upload-label {
+    font-size: 12px; /* ลดขนาดตัวอักษร */
+  }
+  .step3-text {
+    font-size: 13px; /* ปรับขนาดตัวอักษร */
+  }
+  .step3-text-center, .step3-text-left {
+    font-size: 14px; /* ลดขนาดตัวอักษรเมื่อหน้าจอเล็ก */
+  }
+  .step3-terms-text {
+    font-size: 12px; /* ลดขนาดตัวอักษรเมื่อหน้าจอเล็ก */
+    margin-top: 10px;
+    margin-bottom: -5px;
+  }
+  .step3-label {
+    font-size: 13px; /* ลดขนาดตัวอักษรเมื่อหน้าจอเล็ก */
+    margin-bottom: 5px;
+  }
+}
+

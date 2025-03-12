@@ -36,3 +36,14 @@
     transform: rotate(360deg);
   }
 }
+
+/* ฟุตเตอร์ */
+.footer {
+  background-color: #0b3a6a;
+  color: white;
+  padding: 65px 0;
+  text-align: center;
+  
+  
+  width: 100%;
+}

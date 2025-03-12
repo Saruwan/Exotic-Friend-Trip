@@ -1,0 +1,194 @@
+.search-bar-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #003580;
+    padding: 10px;
+    border-radius: 10px;
+    gap: 10px;
+  }
+  
+  .search-input {
+    width: 150px;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 0.9rem;
+  }
+  
+  .date-input-container {
+    position: relative;
+    flex: 1;
+    cursor: pointer;
+  }
+  
+  .date-input {
+    width: 80%;
+    background-color: #ffffff;
+    padding: 10px 40px 10px 10px;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    border: 1px solid #ccc;
+  }
+  
+  .date-icon {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    color: #888;
+    pointer-events: none;
+  }
+  
+  .dropdown-toggle {
+    background-color: #ffffff;
+    padding: 10px;
+    width: 180px;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    position: relative;
+    color: #003580;
+    display: flex; /* ใช้ Flexbox */
+    justify-content: space-between; /* จัดให้ข้อความไปซ้ายและสามเหลี่ยมไปขวา */
+    align-items: center; /* จัดให้อยู่ตรงกลางแนวตั้ง */
+  }
+  
+  .dropdown-menu {
+    position: absolute;
+    background-color: #ffffff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    top: 40px;
+    left: 0;
+    z-index: 1000;
+    padding: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    color: #003580;
+  }
+  
+  .counter-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  .counter-button {
+    background-color: transparent;
+    border: 1px solid #003580;
+    border-radius: 50px;
+    width: 30px;
+    height: 30px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    color: #003580;
+  }
+  
+  .search-button {
+    background-color: #ff7d00;
+    color: #ffffff;
+    border: none;
+    padding: 10px 15px;
+    font-size: 0.9rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .search-button:hover {
+    background-color: #ff6000;
+  }
+  /* ซ่อน DatePicker เมื่อหน้าจอเล็กกว่า 768px */
+  @media (max-width: 760px) {
+    .search-bar-container {
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
+    }
+  
+    .search-input,
+    .dropdown-toggle,
+    .search-button {
+      width: 100%; /* ทำให้เต็มความกว้าง */
+    }
+  
+    .date-input-container {
+      display: none;
+    }
+  
+    .dropdown-toggle {
+      margin-top: -60px;
+      
+    }
+  
+    /* ปรับ dropdown-menu ให้เต็มความกว้าง */
+    .dropdown-menu {
+      width: calc(100% - 20px); /* ลดขอบเล็กน้อยเพื่อให้ไม่ติดขอบจอ */
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+  
+  
+  /* ซ่อน DatePicker เมื่อหน้าจอเล็กกว่า 768px */
+  @media (max-width: 850px) {
+    .search-bar-container {
+      flex-direction: พนไ;
+      align-items: center;
+      padding: 20px;
+      gap: 5px;
+    }
+  
+    .search-input{
+      width: 100%; /* ทำให้เต็มความกว้าง */
+    }
+    .dropdown-toggle{
+      width: 50%; /* ทำให้เต็มความกว้าง */
+    }
+    .search-button {
+      width: 30%; /* ทำให้เต็มความกว้าง */
+    }
+    .date-input-container {
+      display: none;
+    }
+  
+   
+    /* ปรับ dropdown-menu ให้เต็มความกว้าง */
+    .dropdown-menu {
+      width: calc(100% - 20px); /* ลดขอบเล็กน้อยเพื่อให้ไม่ติดขอบจอ */
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+  /* ซ่อน DatePicker และปรับให้เรียงแบบคอลัมน์เมื่อหน้าจอเล็กกว่า 700px */
+@media (max-width: 700px) {
+  .search-bar-container {
+    flex-direction: column; /* เรียงในรูปแบบคอลัมน์ */
+    align-items: center;
+    padding: 20px;
+    gap: 10px; /* กำหนดช่องว่างระหว่างคอมโพเนนต์ */
+  }
+
+  .search-input,
+  .dropdown-toggle,
+  .search-button {
+    width: 100%; /* ทำให้แต่ละองค์ประกอบเต็มความกว้าง */
+  }
+
+  .date-input-container {
+    display: none; /* ซ่อน DatePicker */
+  }
+
+  .dropdown-toggle {
+    margin-top: -60; /* กำหนดให้ dropdown อยู่ในตำแหน่งที่เหมาะสม */
+  }
+
+  /* ปรับ dropdown-menu ให้เต็มความกว้าง */
+  .dropdown-menu {
+    width: calc(100% - 20px); /* ลดขอบเล็กน้อยเพื่อให้ไม่ติดขอบจอ */
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}

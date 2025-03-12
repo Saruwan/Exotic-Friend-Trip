@@ -1,0 +1,206 @@
+.slider-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end; 
+    width: 100%;
+    margin: 20px auto;
+    border-radius: 20px;
+  }
+  
+  .slider-content {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+  
+/* ส่วนของกล่องที่จะแสดงรูป */
+  .slider-image-box {
+    position: relative;
+    width: 200px;
+    height: 280px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+  }
+  /* ขนาดรูป */
+  .slider-image-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.8) 100%);
+  }
+  /* Action เมื่อคลุม */
+  .slider-image-box:hover {
+    transform: scale(1.05);
+  }
+  
+  /* ส่วนที่เป็นตัวควบคุมการเลื่อนหน้าและแสดงหมายเลขหน้า */
+  .slider-label {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%; /* ใช้พื้นที่เต็ม */
+    height: 50px; /* กำหนดความสูงให้คงที่ */
+    text-align: center; /* จัดให้ข้อความอยู่ตรงกลาง */
+    background: rgba(255, 255, 255, 0.1); /* พื้นหลังโปร่งใส */
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+    display: flex;
+    align-items: center; /* จัดข้อความให้อยู่กึ่งกลางแนวตั้ง */
+    justify-content: center; /* จัดข้อความให้อยู่กึ่งกลางแนวนอน */
+    border-radius: 0 0 10px 10px; /* โค้งเฉพาะมุมล่าง */
+  }
+ 
+  .slider-control-section {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end; /* ชิดขวา */
+    gap: 20px;
+    position: relative;
+  }
+
+ /* ปุ่มเลื่อนหน้า */
+  .slider-circle-button {
+    background: transparent;
+    color: white;
+    font-size: 24px;
+    width: 30px;
+    height: 30px;
+    border: 2px solid white;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+  }
+  .slider-circle-button:hover {
+    background: #fff;
+    color: black;
+  }
+
+  /* เส้นคั่นระหว่างปุ่มกับเลขหน้า */
+ .slider-separator {
+    width: 250px;
+    height: 2px;
+    background-color: white;
+  }
+
+/* เลขหน้า */
+  .slider-page-number {
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+
+/* Responsive */
+/*ขนาดหน้าจอเล็กกว่า desktop */ 
+  @media (min-width: 1000px) and (max-width: 1300px) {
+    .slider-wrapper {
+      max-width: 100%; /* ลดขนาดความกว้าง */
+      margin: 15px auto; /* ปรับระยะห่าง */
+    }
+  
+    .slider-content {
+      gap: 20px; /* ลดระยะห่างระหว่างรูป */
+    }
+  
+    .slider-image-box {
+      width: 160px; /* ลดขนาดจาก 200px เป็น 160px */
+      height: 230px; /* ลดขนาดจาก 280px เป็น 230px */
+    }
+  
+    .slider-label {
+      height: 40px; /* ลดความสูงของ label */
+      font-size: 14px; /* ลดขนาดตัวอักษร */
+    }
+  
+    .slider-circle-button {
+      font-size: 20px; /* ปรับขนาดปุ่ม */
+      width: 25px;
+      height: 25px;
+    }
+  
+    .slider-separator {
+      width: 180px; /* ลดความกว้างของเส้นคั่น */
+    }
+  
+    .slider-page-number {
+      font-size: 20px; /* ลดขนาดตัวเลข */
+    }
+  }
+  
+/* ขนาดหน้าจอไอแพด/แท็ปเล้ต */
+  @media (max-width: 1000px) {
+    .slider-wrapper {
+      max-width: 100%;
+      padding: 10px;
+      align-items: center; 
+    }
+    .slider-image-box {
+      width: 100%;
+      height: 250px;
+    }
+  
+  }
+  
+  /* ขนาดหน้าจอโทรศัพท์ */
+  @media (max-width: 768px) {
+    .slider-wrapper {
+      max-width: 100%;
+      padding: 10px;
+      align-items: center; 
+    }
+    .slider-circle-button {
+      font-size: 20px;
+      width: 25px;
+      height: 25px;
+    }
+    .slider-separator {
+      width: 250px;
+      height: 2px;
+      background-color: white;
+    }
+    .slider-separator {
+      width: 150px;
+    }
+    .slider-page-number {
+      font-size: 20px;
+    }
+    .slider-content {
+      gap: 15px;
+      flex-direction: row;
+      align-items: center;
+    }
+    .slider-image-box {
+      width: 100%;
+      height: 170px;
+    }
+    .slider-label {
+     
+      font-size: 13px;
+    }
+    .slider-control-section {
+      margin-top: -5px;
+      gap: 15px;
+    }
+  }
+
+/* ขนาดหน้าจอโทรศัพท์ รุ่นจอเล็ก */
+  @media (max-width: 350px) {
+    .slider-wrapper {
+      max-width: 100%;
+      padding: 5px;
+      align-items: center; 
+    }
+    .slider-image-box {
+      width: 100%;
+      height: 130px;
+    }
+  
+  }
+  

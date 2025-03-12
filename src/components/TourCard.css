@@ -1,0 +1,499 @@
+.tour-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  font-family: Arial, sans-serif;
+  padding: 30px;
+  box-sizing: border-box;
+}
+
+.tour-header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.tour-title {
+  font-size: 36px;
+  font-weight: bold;
+  color: #003580;
+  text-transform: uppercase;
+}
+
+.tour-province {
+  font-size: 18px;
+  color: #ff6f00;
+  max-width: 1000px;
+  margin: 10px auto;
+}
+
+.tour-separator {
+  width: 100%;
+  height: 1px;
+  background-color: #ddd;
+  margin: 10px 0;
+}
+
+.tour-image {
+  width: 100%;
+  position: relative;
+  height: 550px;
+}
+
+.tour-main-image {
+  width: 100%;
+  max-width: 850px;
+  height: 504px;
+  border-radius: 10px;
+  position: relative;
+  margin: 0 auto;
+}
+
+.tour-thumbnail-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  bottom: 60px;
+  width: 100%;
+  z-index: 10;
+}
+
+.tour-thumbnails {
+  display: flex;
+  gap: 20px;
+}
+
+.tour-thumbnail {
+  width: 60px;
+  height: 60px;
+  border-radius: 5px;
+  cursor: pointer;
+  border: 2px solid transparent;
+}
+
+.tour-thumbnail.tour-active-thumbnail {
+  border: 2px solid #003580;
+}
+
+.tour-left-arrow-button,
+.tour-right-arrow-button {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.tour-left-arrow-button {
+  margin-left: 180px;
+}
+
+.tour-right-arrow-button {
+  margin-right: 180px;
+}
+
+.tour-icons {
+  margin-right: 10px;
+}
+
+.tour-content {
+  display: flex;
+  gap: 20px;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.tour-left-section {
+  flex: 2;
+}
+
+.tour-tabs {
+  display: flex;
+  margin-bottom: 10px;
+}
+
+.tour-tab {
+  margin-right: 20px;
+  cursor: pointer;
+  color: #003580;
+}
+
+.tour-active-tab {
+  color: #ff6f00;
+  font-weight: bold;
+}
+
+.tour-separator {
+  height: 1px;
+  background-color: #ddd;
+  margin: 20px 0;
+}
+
+.tour-section-title {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.tour-section-content {
+  margin-bottom: 20px;
+}
+
+.tour-right-section {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  flex: 1;
+}
+
+.tour-box {
+  border: 1px solid #ccc;
+  padding: 15px;
+  border-radius: 8px;
+}
+
+.tour-box-title {
+  font-size: 18px;
+  margin: -5px 0 6px;
+  color: #003580;
+  text-align: left;
+}
+
+.tour-underline {
+  border: none;
+  border-top: 1px solid #ccc;
+  margin: 0 0 10px;
+}
+
+.tour-box-content {
+  line-height: 2;
+  text-align: left;
+}
+
+.tour-info-row {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.tour-info-label {
+  color: #003580;
+  width: 100px;
+  font-weight: bold;
+}
+
+.tour-info-value {
+  color: #ff6f00;
+}
+
+.tour-date-box {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: 10px;
+  height: 80px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  flex-direction: column;
+}
+
+.tour-date-dropdown {
+  max-width: 330px;
+  width: 100%;
+  height: 40px;
+  border-radius: 4px;
+  border: none;
+  font-size: 18px;
+  color: #888;
+}
+
+.tour-date-label {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 1px;
+}
+
+.tour-person-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  background-color: #fff;
+  margin-bottom: 20px;
+  margin: 0 0 10px;
+  height: 50px;
+}
+
+.tour-person-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.tour-sub-text {
+  font-size: 12px;
+  color: #888;
+}
+
+.tour-price {
+  color: #f57c00;
+  font-weight: bold;
+  margin-top: -10px;
+  min-width: 80px;
+  text-align: left;
+}
+
+.tour-counter {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.tour-counter-button {
+  width: 25px;
+  height: 25px;
+  border: 1px solid #888;
+  border-radius: 50px;
+  cursor: pointer;
+  background: transparent;
+  color: #888;
+}
+
+.tour-counter-value {
+  min-width: 20px;
+  text-align: center;
+}
+
+.tour-total-box {
+  margin-top: 20px;
+}
+
+.tour-total-container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.tour-total-label {
+  font-size: 20px;
+  color: #333;
+  margin: 0;
+  text-align: left;
+}
+
+.tour-total-price {
+  font-size: 20px;
+  color: #333;
+  margin-top: -1px;
+  text-align: right;
+}
+
+.tour-note {
+  font-size: 12px;
+  color: #888;
+  margin-top: -15px;
+  text-align: left;
+}
+
+.tour-book-button {
+  margin-top: 10px;
+  padding: 10px 15px;
+  background-color: #003580;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100%;
+  max-width: 350px;
+}
+
+.tour-contact-info {
+  margin-top: 15px;
+}
+
+.tour-contact-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.tour-contact-item span {
+  color: #003580;
+}
+
+.tour-icon-circle {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #003580;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 10px;
+}
+
+.tour-icon {
+  color: #fff;
+  font-size: 20px;
+}
+
+.tour-qr-code {
+  text-align: center;
+  margin-top: 15px;
+}
+
+.tour-qr-image {
+  max-width: 200px;
+  height: auto;
+}
+
+.tour-divider {
+  width: 100%;
+  height: 1px;
+  background-color: #ddd;
+  margin-bottom: 20px;
+}
+
+
+/* Responsive Styles */
+@media (max-width: 900px) {
+.tour-date-dropdown {
+  font-size: 13px;
+  margin: 0 auto;
+}
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .tour-content {
+    flex-direction: column;
+    gap: 5px;
+    justify-content: center; /* เพิ่มให้คอนเทนต์อยู่ตรงกลาง */
+    align-items: center;     /* เพิ่มให้คอนเทนต์อยู่ตรงกลาง */
+  }
+
+  .tour-left-section {
+    order: 2; /* ให้ส่วนนี้อยู่หลัง */
+  }
+
+  .tour-right-section {
+    order: 1; /* ให้ส่วนนี้ขึ้นก่อน */
+  }
+  .tour-right-section {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .tour-main-image {
+    width: 100%;
+    height: 70%; /* ปรับให้ภาพย่อขนาดตามหน้าจอ */
+    margin-top: 15px;
+  }
+
+  .tour-tabs {
+    margin: 0 10px; /* เพิ่มระยะห่างซ้ายขวา */
+  }
+
+  .tour-book-button {
+    width: 100%;
+    max-width: 100%;
+    padding: 12px 15px;
+  }
+
+  .tour-thumbnail-container {
+    position: relative;
+    margin-top: 100px;
+  }
+
+  .tour-thumbnail {
+    width: 50px;
+    height: 50px;
+  }
+
+  .tour-left-arrow-button,
+  .tour-right-arrow-button {
+    color: #003580;
+    font-size: 18px;
+  }
+
+  .tour-thumbnails {
+    gap: 5px;
+  }
+
+  .tour-title {
+    font-size: 20px;
+  }
+
+  .tour-province {
+    font-size: 16px;
+  }
+}
+
+
+/* Responsive Styles */
+@media (max-width: 480px) {
+  .tour-content {
+    flex-direction: column;
+    gap: 5px;
+    justify-content: center; /* เพิ่มให้คอนเทนต์อยู่ตรงกลาง */
+    align-items: center;     /* เพิ่มให้คอนเทนต์อยู่ตรงกลาง */
+  }
+
+  .tour-right-section {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .tour-main-image {
+    width: 100%;
+    height: 70%; /* ปรับให้ภาพย่อขนาดตามหน้าจอ */
+    margin-top: 15px;
+  }
+
+  .tour-tabs {
+    margin: 0 30px; /* เพิ่มระยะห่างซ้ายขวา */
+  }
+
+  .tour-book-button {
+    width: 100%;
+    max-width: 100%;
+    padding: 12px 15px;
+  }
+
+  .tour-thumbnail-container {
+    position: relative;
+    margin-top: 100px;
+  }
+
+  .tour-thumbnail {
+    width: 50px;
+    height: 50px;
+  }
+
+  .tour-left-arrow-button,
+  .tour-right-arrow-button {
+    color: #003580;
+    font-size: 18px;
+  }
+
+  .tour-thumbnails {
+    gap: 5px;
+  }
+
+  .tour-title {
+    font-size: 20px;
+  }
+
+  .tour-province {
+    font-size: 16px;
+  }
+  .tour-right-section {
+   width: 100%;
+  }
+}
+
